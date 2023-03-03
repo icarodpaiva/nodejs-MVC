@@ -1,4 +1,2 @@
-const nome: string = 'Icaro Paiva'
-const idade: number = 26
-
-console.log(nome, idade)
+const n1: number = 3
+console.log('n1', n1)
