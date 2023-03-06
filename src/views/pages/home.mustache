@@ -1,0 +1,29 @@
+{{ >partials/header }}
+
+  <h2>Olá {{ user.name }}, você tem {{ user.age }} anos de idade</h2>
+
+  {{ #showWelcome }}
+    <p>Seja bem vindo ao site</p>
+  {{ /showWelcome }}
+  {{ ^showWelcome }}
+    <p>Não seja bem vindo ao site</p>
+  {{ /showWelcome }}
+
+  <h2>Produtos:</h2>
+  <ul>
+    {{ #products }}
+      {{ >partials/productItem }}
+    {{ /products }}
+  </ul>
+
+  <h2>Frases do dia:</h2>
+  <ul>
+    {{ #messages }}
+      <li>{{ . }}</li>
+    {{ /messages }}
+    {{ ^messages }}
+      Não há frases interessante hoje.
+    {{ /messages }}
+  </ul>
+
+{{ >partials/footer }}

@@ -33,7 +33,15 @@ router.get('/', (req, res) => {
     'Mensagem 5',
   ]
 
-  res.render('home', { user, showWelcome, products, messages })
+  res.render('pages/home', { user, showWelcome, products, messages })
+})
+
+router.get('/sobre', (req, res) => {
+  res.render('pages/sobre')
+})
+
+router.get('/contato', (req, res) => {
+  res.render('pages/contato')
 })
 
 router.get('/voo/:origem-:destino', (req, res) => {
