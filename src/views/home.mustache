@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Título da Página</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Título 1</h1>
+  <hr/>
+  <h2>Olá {{ user.name }}, você tem {{ user.age }} anos de idade</h2>
+
+  {{ #showWelcome }}
+    <p>Seja bem vindo ao site</p>
+  {{ /showWelcome }}
+
+  <h2>Produtos:</h2>
+  <ul>
+    {{ #products }}
+      <li>{{ title }} - R${{ price }},00</li>
+    {{ /products }}
+  </ul>
+
+  <h2>Frases do dia:</h2>
+  <ul>
+    {{ #messages }}
+      <li>{{ . }}</li>
+    {{ /messages }}
+  </ul>
+</body>
+</html>

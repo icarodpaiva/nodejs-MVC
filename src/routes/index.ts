@@ -3,7 +3,37 @@ import { Router } from 'express'
 const router = Router()
 
 router.get('/', (req, res) => {
-  res.send('hello world')
+  const user = {
+    name: 'Icaro Paiva',
+    age: 26,
+  }
+
+  const showWelcome = true
+
+  const products = [
+    {
+      title: 'Produto X',
+      price: 10,
+    },
+    {
+      title: 'Produto Y',
+      price: 15,
+    },
+    {
+      title: 'Produto Z',
+      price: 20,
+    },
+  ]
+
+  const messages = [
+    'Mensagem 1',
+    'Mensagem 2',
+    'Mensagem 3',
+    'Mensagem 4',
+    'Mensagem 5',
+  ]
+
+  res.render('home', { user, showWelcome, products, messages })
 })
 
 router.get('/voo/:origem-:destino', (req, res) => {
