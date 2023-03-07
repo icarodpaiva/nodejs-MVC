@@ -44,6 +44,23 @@ router.get('/contato', (req, res) => {
   res.render('pages/contato')
 })
 
+router.get('/nome', (req, res) => {
+  const { nome } = req.query
+  res.render('pages/nome', { nome })
+})
+
+router.get('/idade', (req, res) => {
+  const { anoNascimento } = req.query
+  let age: number | null = null
+
+  if (anoNascimento && typeof anoNascimento === 'string') {
+    const actualYear = new Date().getFullYear()
+    age = actualYear - parseInt(anoNascimento)
+  }
+
+  res.render('pages/idade', { age })
+})
+
 router.get('/voo/:origem-:destino', (req, res) => {
   const { origem, destino } = req.params
   res.send(`voo de ${origem} até ${destino}`)
