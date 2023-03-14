@@ -16,6 +16,20 @@
     {{ /products }}
   </ul>
 
+  <h2>Produtos menores de 13 reais:</h2>
+  <ul>
+    {{ #cheapProducts }}
+      {{ >partials/productItem }}
+    {{ /cheapProducts }}
+  </ul>
+
+  <h2>Produtos a partir de 13 reais:</h2>
+  <ul>
+    {{ #expensiveProducts }}
+      {{ >partials/productItem }}
+    {{ /expensiveProducts }}
+  </ul>
+
   <h2>Frases do dia:</h2>
   <ul>
     {{ #messages }}
