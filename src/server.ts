@@ -1,11 +1,15 @@
+import dotenv from 'dotenv'
 import express from 'express'
 import path from 'path'
 import mustache from 'mustache-express'
 import mainRoutes from './routes'
 import panelRoutes from './routes/panel'
 
-const PORT = 3000
+dotenv.config()
+
 const server = express()
+
+const PORT = process.env.PORT ?? 3000
 
 server.set('view engine', 'mustache')
 server.set('views', path.join(__dirname, 'views'))
